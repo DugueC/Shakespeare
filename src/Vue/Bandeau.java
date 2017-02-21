@@ -35,7 +35,7 @@ public class Bandeau extends JPanel implements Observer {
 		String message = c.getModele().getMessagebandeau();
 		int taille = fm.stringWidth(message);
 		
-		g.drawString(c.getModele().getMessagebandeau(), (this.getWidth()-taille)/2, 50);	
+		g.drawString(message, (this.getWidth()-taille)/2, 50);	
 	}
 
 	@Override

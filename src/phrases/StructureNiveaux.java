@@ -21,6 +21,7 @@ public class StructureNiveaux {
 		String regle;
 		String texte;
 		String reponses;
+		String correction;
 		
 		try{
 			FileReader fichier = new FileReader(f);
@@ -40,7 +41,8 @@ public class StructureNiveaux {
 				regle = filtre2.next();
 				texte = filtre2.next();
 				reponses =  filtre2.next();
-				ajouter(niveau,regle,texte, reponses);
+				correction = filtre2.next();
+				ajouter(niveau,regle,texte, reponses, correction);
 					
 				// on lit la prochaine ligne
 				ligne = filtre.readLine();
@@ -55,7 +57,7 @@ public class StructureNiveaux {
 		}
 	}
 	
-	private void ajouter(int niveau, String regle, String texte, String reponse) {
+	private void ajouter(int niveau, String regle, String texte, String reponse, String correction) {
 		// ajout niveau
 		Niveau niv = null;
 		for(Niveau n : niveaux){
@@ -80,7 +82,7 @@ public class StructureNiveaux {
 			niv.ajouter(reg);
 		}
 		
-		reg.ajouter(texte,reponse);
+		reg.ajouter(texte,reponse,correction);
 	}
 	
 	public Niveau getNiveau(int num){

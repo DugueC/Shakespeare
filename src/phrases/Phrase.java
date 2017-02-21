@@ -6,9 +6,11 @@ import java.util.Scanner;
 public class Phrase {
 	ArrayList<Integer> reponses;
 	ArrayList<Mot> mots;
+	String correction;
 	
-	public Phrase(String reponses){
+	public Phrase(String reponses, String correction){
 		this.reponses = parse(reponses);
+		this.correction = correction;
 		mots = new ArrayList<Mot>();
 	}
 	
@@ -48,5 +50,9 @@ public class Phrase {
 			}
 		}
 		return -1;
+	}
+	
+	public String getCorrection(){
+		return correction;
 	}
 }

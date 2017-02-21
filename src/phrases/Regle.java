@@ -22,11 +22,11 @@ public class Regle {
 		phrases = new ArrayList<Phrase>();
 	}
 	
-	public void ajouter(String phrase,String reponse){
+	public void ajouter(String phrase,String reponse, String correction){
 		
 		Scanner filtre = new Scanner(phrase);
 		filtre.useDelimiter(" ");
-		Phrase p = new Phrase(reponse);
+		Phrase p = new Phrase(reponse, correction);
 		while(filtre.hasNext()){
 			p.ajouter(new Mot(filtre.next()));
 		}
