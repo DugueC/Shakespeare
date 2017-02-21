@@ -1,5 +1,6 @@
 package exos;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -14,29 +15,25 @@ import javax.swing.JPanel;
 import controleur.Controleur;
 
 @SuppressWarnings("serial")
-public class Infos extends JPanel implements Observer {
+public class Infos extends JPanel {
 	Controleur c;
 	
 	public Infos(Controleur c){
 		this.c = c;
-		c.getModele().addObserver(this);
 		setPreferredSize(new Dimension(this.getWidth(),30));
-	}
-	
-	@Override
-	public void update(Observable arg0, Object arg1) {
-		this.repaint();
 	}
 	
 	public void paintComponent(Graphics g)
 	{	
-		try{
-			Image img = ImageIO.read(new File("img/bleu_clair.png"));
-			g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
+		/*try{
+			Image img = ImageIO.read(new File("img/bleu2.png"));
+			g.drawImage(img, -5, 0, this.getWidth()+10, this.getHeight(), this);
 		}
 		catch (IOException e){
 			e.printStackTrace();
-		}
+		}*/
+		g.setColor(new Color(0, 33, 153));
+		g.fillRect(0, 0, this.getWidth(), this.getHeight());
 	}
 	
 }

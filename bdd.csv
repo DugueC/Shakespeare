@@ -1,21 +1,21 @@
 Niveaux;Regles;Phrases;Reponse
-1;regle11;1aaaa 2aaaaaaa 3aaaaa 4aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaa;0
-1;regle12;1bbbbb 2bbbbbb 3bbbbb 4bbbbbbbbbbbb bbbbbbbbbbbbbbb bbbbbbbbbbbbbbbbbbbb bbbbbbbbbbb;1
-2;regle21;1ccc 2ccccccccc 3cccccc;2
-2;regle22;1ddd 2dddddddd 3dddddddd;3
-3;regle31;1eeeee 2eeeeeee 3eeeeee;0
+1;regle11;1aaaa 2aaaaaaa 3aaaaa 4aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaa;1,2
+1;regle12;1bbbbb 2bbbbbb 3bbbbb 4bbbbbbbbbbbb bbbbbbbbbbbbbbb bbbbbbbbbbbbbbbbbbbb bbbbbbbbbbb;1,3
+2;regle21;1ccc 2ccccccccc 3cccccc;1
+2;regle22;1ddd 2dddddddd 3dddddddd;1
+3;regle31;1eeeee 2eeeeeee 3eeeeee;1
 3;regle32;1ffffffffff 2ffffffffffffffffff 3fffffffffffffffff;1
-4;regle41;1gggggg 2ggggggg 3ggggg;2
-4;regle42;1hhhhhhhh 2hhhhhhh 3hhhhh;3
-5;regle51;1iiiiiiiiiiiiiii 2iiiiiiiiiiiiiiiiiiiiiii 3iiiiiiiiii;0
+4;regle41;1gggggg 2ggggggg 3ggggg;1
+4;regle42;1hhhhhhhh 2hhhhhhh 3hhhhh;1
+5;regle51;1iiiiiiiiiiiiiii 2iiiiiiiiiiiiiiiiiiiiiii 3iiiiiiiiii;1
 5;regle52;1jjjjjjjjjj 2jjjjjjjjjjjjjjjjjjjj 3jjjjjjjjjjjjjjjjjj;1
-6;regle61;1kkkkkk 2kkkkkkkkk 3kkkkkk;2
-6;regle62;1llllllllllllllll 2lllllllllllllll 3llllllllllllllll;3
-7;regle71;1mmm 2mmmmm 3mmmmm;0
+6;regle61;1kkkkkk 2kkkkkkkkk 3kkkkkk;1
+6;regle62;1llllllllllllllll 2lllllllllllllll 3llllllllllllllll;1
+7;regle71;1mmm 2mmmmm 3mmmmm;1
 7;regle72;1nnnnnn 2nnnn 3nnnnnnnnnn;1
-8;regle81;1oooooooo 2oooooooo 3oooo;2
-8;regle82;1pppppp 2pppppppppppp 3pp;3
-9;regle91;1qqqqqqqq 2qqqqqq 3qqqqqq;0
+8;regle81;1oooooooo 2oooooooo 3oooo;1
+8;regle82;1pppppp 2pppppppppppp 3pp;1
+9;regle91;1qqqqqqqq 2qqqqqq 3qqqqqq;1
 9;regle92;1rrrrrrr 2rrrrrrrrrrrrrr 3rrrrrrrrrrrrrr;1
-10;regle101;1ssssssss 2ssssss 3ssssss;2
-10;regle102;1ttttttttt 2tttttttt 3tttttttttttttttttt;3
+10;regle101;1ssssssss 2ssssss 3ssssss;1
+10;regle102;I am been;2

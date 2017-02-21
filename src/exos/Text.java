@@ -14,7 +14,6 @@ public class Text extends JPanel {
 		add(new TextZoneCliquable(c),BorderLayout.CENTER);
 		add(new TextZoneBouton(c),BorderLayout.SOUTH);
 		
-		
 		validate();
 	}
 

@@ -20,7 +20,7 @@ public class StructureNiveaux {
 		int niveau;
 		String regle;
 		String texte;
-		int reponse;
+		String reponses;
 		
 		try{
 			FileReader fichier = new FileReader(f);
@@ -39,8 +39,8 @@ public class StructureNiveaux {
 				niveau = Integer.parseInt(filtre2.next());
 				regle = filtre2.next();
 				texte = filtre2.next();
-				reponse =  Integer.parseInt(filtre2.next());
-				ajouter(niveau,regle,texte, reponse);
+				reponses =  filtre2.next();
+				ajouter(niveau,regle,texte, reponses);
 					
 				// on lit la prochaine ligne
 				ligne = filtre.readLine();
@@ -48,14 +48,14 @@ public class StructureNiveaux {
 			}
 			
 			filtre.close();
-			fichier.close();	
+			fichier.close();
 		}
 		catch (IOException e){
 			System.out.println("error : "+ e);
 		}
 	}
 	
-	private void ajouter(int niveau, String regle, String texte, int reponse) {
+	private void ajouter(int niveau, String regle, String texte, String reponse) {
 		// ajout niveau
 		Niveau niv = null;
 		for(Niveau n : niveaux){
@@ -80,16 +80,15 @@ public class StructureNiveaux {
 			niv.ajouter(reg);
 		}
 		
-		/*System.out.println(niveau);
-		System.out.println(regle);
-		System.out.println(texte);
-		System.out.println("");*/
-		
 		reg.ajouter(texte,reponse);
 	}
 	
 	public Niveau getNiveau(int num){
 		return niveaux.get(num);
+	}
+	
+	public ArrayList<Niveau> getNiveaux(){
+		return niveaux;
 	}
 
 }

@@ -20,6 +20,8 @@ public class TextZoneBouton extends JPanel {
 		JButton b = new JButton("No error");
 		b.setBounds(230, 5, 120, 25);
 		b.addActionListener(c);
+		b.setBackground(Color.lightGray);
+		b.setForeground(Color.black);
 		add(b);
 	}
 	

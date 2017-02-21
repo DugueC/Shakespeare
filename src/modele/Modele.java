@@ -1,6 +1,12 @@
 package modele;
 
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Observable;
+
+import javax.imageio.ImageIO;
 
 import phrases.Niveau;
 import phrases.Phrase;
@@ -14,21 +20,15 @@ public class Modele extends Observable{
 	private Regle regle;
 	private Phrase phrase;
 	private int reponse[];
-	private int modeBandeau; //0 = accueil, 1 = exo, 2 = reponse bonne, 3 = reponse fausse
-	
+	private Image imgExplications;
+	private Image imgBandeau;
+	private String messageBandeau;
+
 	public Modele(){
 		structure = new StructureNiveaux("bdd.csv");
 		ouvert = true;
-		niveau = null;
-		regle = null;
-		phrase = null;
-		reponse = new int[2];
-		reponse[0]=-1;
-		reponse[1]=-1;
-		modeBandeau = 0;
+		reset();
 	}
-	
-	
 	
 	// ouvert
 	public boolean getOuvert() {
@@ -42,9 +42,12 @@ public class Modele extends Observable{
 	
 	//niveau
 	public void setNiveau(int num) {
-		this.niveau = structure.getNiveau(num-1);
+		niveau = structure.getNiveau(num-1);
+		niveau.majSommeCompteurs();
 		setPhrase();
-		setModeBandeau(1);
+		setImgBandeau("neutre");
+		messageBandeau = "Find the spelling mistake";
+		imgExplications = null;
 		setChanged();
 		notifyObservers();
 	}
@@ -54,15 +57,22 @@ public class Modele extends Observable{
 		}
 		return niveau.getNiveau();
 	}
+	public Niveau getVraiNiveau(){
+		return niveau;
+	}
 	
 	//regle
 	public void setRegle(){
-		int x;
-		do{
-			x = (int)(Math.random()*niveau.getSize());
-		}while(this.regle == niveau.getRegle(x));
-		
-		this.regle = niveau.getRegle(x);
+		ArrayList<Regle> reglesPossibles = new ArrayList<Regle>();
+
+		for(int i=0; i<niveau.getSize();i++){
+			if((this.regle != niveau.getRegle(i)) && (niveau.getRegle(i).getCompteur() != 4)){
+				reglesPossibles.add(niveau.getRegle(i));
+			}
+		}
+		if(reglesPossibles.size()>0){
+			this.regle = reglesPossibles.get((int)(Math.random()*reglesPossibles.size()));
+		}
 	}
 	public String getRegle(){
 		return regle.getRegle();
@@ -73,8 +83,6 @@ public class Modele extends Observable{
 		setRegle();
 		int x = (int)(Math.random()*regle.getSize());
 		this.phrase = regle.getPhrase(x);
-		setChanged();
-		notifyObservers();
 	}
 	public Phrase getPhrase(){
 		return phrase;
@@ -86,39 +94,87 @@ public class Modele extends Observable{
 		reponse[1] = y;
 		boolean bonneReponse = verification(x,y);
 		if(bonneReponse){
-			 setModeBandeau(2);
+			setImgBandeau("gagne");
+			messageBandeau = "Well done !";
+			regle.setCompteur(regle.getCompteur()+1);
 		}
 		else{
-			setModeBandeau(3);
+			setImgBandeau("perdu");
+			messageBandeau = "Nope...";
+			regle.setCompteur(0);
 		}
-		/*+figer text cliquable
+		setExplications(regle.getRegle());
+		/*
 		+afficher erreur sur texte cliquable
-		+afficher règle sur panneau en dessous de texte*/
+		*/
 		setChanged();
 		notifyObservers();
 	}
+	
+	public Image getExplications(){
+		return imgExplications;
+	}
+	public void setExplications(String regle) {
+		try {
+			imgExplications = ImageIO.read(new File("img/regles/"+regle+".png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+
 	public int[] getReponse(){
 		return reponse;
 	}
 	
 	//modeBandeau
-	public void setModeBandeau(int m) {
-		modeBandeau = m;
+	public void setImgBandeau(String img) {
+		try {
+			imgBandeau = ImageIO.read(new File("img/bandeau/"+img+".png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-	public int getModeBandeau(){
-		return modeBandeau;
+	public Image getImgBandeau(){
+		return imgBandeau;
+	}
+	public String getMessagebandeau() {
+		return messageBandeau;
+	}
+	
+	public StructureNiveaux getStruct(){
+		return structure;
 	}
 	
 	public boolean verification(int x, int y){
 		if(x == -1 && y == -1){
-			if(phrase.getReponse()==0){
+			if(phrase.getReponses().get(0)==0){
 				return true;
 			}
 			return false;
 		}
 		else{
-			
-			return true;
+			for(int r : phrase.getReponses()){
+				if(phrase.getNumMot(x, y)==r){
+					return true;
+				}
+			}
+			return false;
 		}
 	}
+
+	public void reset() {
+		niveau = null;
+		regle = null;
+		phrase = null;
+		reponse = new int[2];
+		reponse[0]=-1;
+		reponse[1]=-1;
+		imgExplications = null;
+		setImgBandeau("neutre");
+		messageBandeau = "Chose your level";
+		setChanged();
+		notifyObservers();
+	}
+
 }

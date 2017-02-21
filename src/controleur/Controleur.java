@@ -33,6 +33,10 @@ public class Controleur implements ActionListener, MouseListener {
 			{
 				m.setOuvert(false);	
 			}
+			if(monItem.getName().equals("MenuHome"))
+			{
+				m.reset();	
+			}
 		}
 		
 		if(e.getSource() instanceof BoutonLetsGo){
@@ -45,13 +49,21 @@ public class Controleur implements ActionListener, MouseListener {
 			
 			if(bouton.getText().equals("No error")){
 				m.setReponse(-1,-1);
-			}		
+			}
+			
+			if(bouton.getText().equals("Next") ){
+				m.setNiveau(m.getNiveau());
+			}
+			
+			if( bouton.getText().equals("Home")){
+				m.reset();
+			}
 		}
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		m.setReponse(e.getX(),e.getY());
+			m.setReponse(e.getX(),e.getY());
 	}
 
 	@Override

@@ -14,6 +14,8 @@ import javax.swing.JPanel;
 import accueil.Accueil;
 import controleur.Controleur;
 import exos.Exo;
+import fin.FinNiveau;
+import reponses.Reponse;
 
 @SuppressWarnings("serial")
 public class Fenetre extends JFrame implements Observer {
@@ -35,11 +37,18 @@ public class Fenetre extends JFrame implements Observer {
 		
 		//menu
 		JMenuBar barreMenu = new JMenuBar();
+		JMenu file = new JMenu("File");
+		
 		JMenuItem quitter = new JMenuItem("Quit");
 		quitter.setName("MenuQuitter");
 		quitter.addActionListener(c);
-		JMenu file = new JMenu("File");
+		
+		JMenuItem home = new JMenuItem("Home");
+		home.setName("MenuHome");
+		home.addActionListener(c);
+		
 		file.add(quitter);
+		file.add(home);
 		barreMenu.add(file);
 		setJMenuBar(barreMenu);
 		
@@ -53,10 +62,10 @@ public class Fenetre extends JFrame implements Observer {
 
 
 	public void setPanel(JPanel p) {
-			this.remove(panneau);
-			panneau = p;
-			this.add(panneau);
-			this.revalidate();
+		this.remove(panneau);
+		panneau = p;
+		this.add(panneau);
+		this.revalidate();
 	}
 
 
@@ -66,8 +75,18 @@ public class Fenetre extends JFrame implements Observer {
 			Accueil p = new Accueil(c);
 			this.setPanel(p);
 		}
+		else if(c.getModele().getExplications()==null){
+			if(c.getModele().getVraiNiveau().getSommeCompteurs()==c.getModele().getVraiNiveau().getSize()*4){
+				FinNiveau p = new FinNiveau(c);
+				this.setPanel(p);
+			}
+			else{
+				Exo p = new Exo(c);
+				this.setPanel(p);
+			}
+		}
 		else{
-			Exo p = new Exo(c);
+			Reponse p = new Reponse(c);
 			this.setPanel(p);
 		}
 		

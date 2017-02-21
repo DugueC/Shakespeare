@@ -1,38 +1,52 @@
 package phrases;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Phrase {
-	int reponse;
-	ArrayList<String> mots;
-
-	public Phrase(int reponse){
-		this.reponse = reponse;
-		mots = new ArrayList<String>();
+	ArrayList<Integer> reponses;
+	ArrayList<Mot> mots;
+	
+	public Phrase(String reponses){
+		this.reponses = parse(reponses);
+		mots = new ArrayList<Mot>();
 	}
 	
-	public void ajouter(String mot){
-		mots.add(mot);
-	}
-	
-	public String getText(){
-		String phrase="";
-		for(String s : mots){
-			phrase = phrase + s + " "; 
+	private ArrayList<Integer> parse(String reponses) {
+		Scanner filtre = new Scanner(reponses);
+		filtre.useDelimiter(",");
+		ArrayList<Integer> r = new ArrayList<Integer>();
+		while(filtre.hasNext()){
+			r.add(filtre.nextInt());
 		}
-		phrase = phrase.substring(0,phrase.length()-1);
-		return phrase;
+		filtre.close();
+		return r;
+	}
+
+	public void ajouter(Mot mot){
+		mots.add(mot);
 	}
 
 	public double getSize() {
 		return mots.size();
 	}
 
-	public String getMot(int x) {
+	public Mot getMot(int x) {
 		return mots.get(x);
 	}
 	
-	public int getReponse(){
-		return reponse;
+	public ArrayList<Integer> getReponses(){
+		return reponses;
+	}
+	
+	public int getNumMot(int x, int y){
+		Mot m;
+		for(int k=0;k<mots.size();k++){
+			m = mots.get(k);
+			if((m.getX()<x)&&(x<m.getXMax())&&(m.getYMin()<y)&&(y<m.getY()+5)){
+				return k+1;
+			}
+		}
+		return -1;
 	}
 }

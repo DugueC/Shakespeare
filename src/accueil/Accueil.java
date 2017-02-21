@@ -9,13 +9,14 @@ import controleur.Controleur;
 
 @SuppressWarnings("serial")
 public class Accueil extends JPanel {
-	int tailleListe = 10;
+	
 	JPanel liste;
 	JScrollPane scroll;
 	
 	public Accueil(Controleur c){
 		
 		setLayout(new BorderLayout());
+		int tailleListe = c.getModele().getStruct().getNiveaux().size();
 		
 		//liste
 		liste = new JPanel();
