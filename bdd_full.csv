@@ -1,54 +1,54 @@
-Niveaux;Regles;Phrases;Reponse;Correction (pas phrase entiï¿½re)
-1;regle11;That flower smell good.;3;That fllower smells good.
+Niveaux;Regles;Phrases;Reponse;Correction (pas phrase entiÃ¯Â¿Â½re)
+1;regle11;That flower smell good.;3;That flower smells good.
 3;regle31;He try to catch the ball.;2;He tries to catch the ball.
 1;regle11;He don't see the point.;2;He doesn't see the point.
-1;regle11;When I tried to warn him, he began to cry, and he still do.;14;… he still does.
+1;regle11;When I tried to warn him, he began to cry, and he still do.;14;â€¦ he still does.
 1;regle11;He loves his father more than his mother.;0;No error
 1;regle11;He explains a lot better when the students are listening.;0;No error
-1;regle11;Every time he argue with Mary, it ends with cries.;4;… he argues…
+1;regle11;Every time he argue with Mary, it ends with cries.;4;â€¦ he arguesâ€¦
 2;regle22;He focus on his work.;2;He focuses on his work.
-2;regle22;He always kiss his wife goodbye before leaving to work.;3;He kisses…
+2;regle22;He always kiss his wife goodbye before leaving to work.;3;He kissesâ€¦
 2;regle22;She watch the TV every day, even when she's exhausted.;2;She watches...
 2;regle22;He is very clumsy, he often crashes eggs trying to cook breakfast;0;No error
-3;regle31;He has no chance to get that train, even if he hurry.;12;… if he hurries.
-3;regle31;No one deny the immediate threats posed by the environmental crisis.;3;No one denies…
+3;regle31;He has no chance to get that train, even if he hurry.;12;â€¦ if he hurries.
+3;regle31;No one deny the immediate threats posed by the environmental crisis.;3;No one deniesâ€¦
 3;regle31;That situation carries political and economical risks.;0;No error
-1;regle12;How old are you ?;0;No error
+1;regle12;How old are youÂ ?;0;No error
 1;regle12;His little girl has 3 years old;4;His little girl is 3 years old.
 1;regle12;I have 6 years old.;2;I am 6 years old
 1;regle13;He is married with a teacher.;4;He is married to a teacher.
-1;regle13;She always knew that she would marry with an artist.;8;… she would marry an artist.
-1;regle13;Are you married to my postman ?;0;No error
+1;regle13;She always knew that she would marry with an artist.;8;â€¦ she would marry an artist.
+1;regle13;Are you married to my postmanÂ ?;0;No error
 1;regle13;He wants to marry to a model.;5;He wants to marry a model.
 2;regle21;He often gets good marks in school.;0;No error
-2;regle21;I remember usually to do my homework.;3;I usually remember…
+2;regle21;I remember usually to do my homework.;3;I usually rememberâ€¦
 2;regle21;I hardly ever eat junk food.;0;No error
-2;regle21;A marginal idea seldom is a career killer, but a revolutionary idea can often be a career maker. ;4;...is seldom…
+2;regle21;A marginal idea seldom is a career killer, but a revolutionary idea can often be a career maker. ;4;...is seldomâ€¦
 2;regle21;I am never keen on going to the dentist.;0;No error
 1;regle14;I am agree with you.;2;I agree with you.
-1;regle14;Are you agree ?;1;Do you agree ?
-1;regle14;The two companies are agree on creating a joint venture.;4;They agree on …
-1;regle14;Whether we always agree is not necessarily important. ;0;No error
-3;regle32;There is books on the desk.;2;There are books…
-3;regle32;There are some milk in the fridge.;2;There is some milk…
-3;regle32;Is there cats on the sofa ?;1;Are there cats…
-3;regle32;How many students are there in your class ?;0;No error
-3;regle32;If an item is sold out online, does that mean there aren't any available in-store? ;0;No error
-4;regle41;There are playing their video games over there.;1;They are…
-4;regle41;Their going to be late, if they don't hurry up.;1;They're going…
-4;regle41;Can you put my bag over their, please ?;7;...over there…
-4;regle41;Are you going to they're wedding ? It's next week.;4;...to their wedding…
-4;regle41;They bought some new curtains for there new house.;7;… for their new house.
+1;regle14;Are you agreeÂ ?;1;Do you agreeÂ ?
+1;regle14;The two companies are agree on creating a joint venture.;4;They agree on â€¦
+1;regle14;Whether we alwaysÂ agreeÂ isÂ not necessarily important. ;0;No error
+3;regle32;There is books on the desk.;2;There are booksâ€¦
+3;regle32;There are some milk in the fridge.;2;There is some milkâ€¦
+3;regle32;Is there cats on the sofaÂ ?;1;Are there catsâ€¦
+3;regle32;How many students are there in your classÂ ?;0;No error
+3;regle32;If an item is sold out online, does thatÂ meanÂ there aren'tÂ any available in-store? ;0;No error
+4;regle41;There areÂ playingÂ theirÂ video games overÂ there.;1;They areâ€¦
+4;regle41;Their going to be late, if they don't hurry up.;1;They're goingâ€¦
+4;regle41;Can you put my bag over their, pleaseÂ ?;7;...over thereâ€¦
+4;regle41;Are you going to they're weddingÂ ? It's next week.;4;...to their weddingâ€¦
+4;regle41;They bought some new curtains for there new house.;7;â€¦ for their new house.
 4;regle41;I think they're frustated with the decision.;0;No error
-4;regle41;This bus will take you their.;6;… take you there.
-2;regle23;Your about to start your new career, how do you feel about it ?;1;You're about to…
-2;regle23;Where is you're phone, I can't find mine…;3;Where is your phone ?
-2;regle23;Oh, I never met him before ! Is he from you're family ?;10;...from your family ?
+4;regle41;This bus will take you their.;6;â€¦ take you there.
+2;regle23;Your about to start your new career, how do you feel about itÂ ?;1;You're about toâ€¦
+2;regle23;Where is you're phone, I can't find mineâ€¦;3;Where is your phoneÂ ?
+2;regle23;Oh, I never met him beforeÂ ! Is he from you're familyÂ ?;10;...from your familyÂ ?
 2;regle23;You didn't tell me your married.;5;...you're married.
-2;regle23;Is that jam on your face ? You should go clean it !;0;No error
-2;regle23;You're dress looks nice, is it new ?;1;Your dress…
+2;regle23;Is that jam on your faceÂ ? You should go clean itÂ !;0;No error
+2;regle23;You're dress looks nice, is it newÂ ?;1;Your dressâ€¦
 4;regle42;I've been in Chile since 10 years.;5;...for 10 years.
 4;regle42;I've not smoked since 2015, I'm kind of proud.;0;No error
-4;regle42;That pizzeria is the best of the town, and that since 10 years !;11;…and that for 10 years !
-4;regle42;I haven't see you since ages, what are you doing now ?;5;...see you for ages…
+4;regle42;That pizzeria is the best of the town, and that since 10 yearsÂ !;11;â€¦and that for 10 yearsÂ !
+4;regle42;I haven't see you since ages, what are you doing nowÂ ?;5;...see you for agesâ€¦
 4;regle42;He hasn't been to Berlin since his last birthday.;0;No error
