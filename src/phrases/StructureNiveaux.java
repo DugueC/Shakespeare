@@ -73,7 +73,7 @@ public class StructureNiveaux {
 		// ajout regle
 		Regle reg = null;
 		for(Regle r : niv.getRegles()){
-			if(r.getRegle()==regle){
+			if(r.getRegle().equals(regle)){
 				reg = r;
 			}
 		}
@@ -86,7 +86,12 @@ public class StructureNiveaux {
 	}
 	
 	public Niveau getNiveau(int num){
-		return niveaux.get(num);
+		for(Niveau n : niveaux){
+			if(n.getNiveau() == num){
+				return n;
+			}
+		}
+		return null;
 	}
 	
 	public ArrayList<Niveau> getNiveaux(){

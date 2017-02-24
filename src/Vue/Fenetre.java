@@ -77,6 +77,7 @@ public class Fenetre extends JFrame implements Observer {
 		}
 		else if(c.getModele().getExplications()==null){
 			if(c.getModele().getVraiNiveau().getSommeCompteurs()==c.getModele().getVraiNiveau().getSize()*4){
+				c.getModele().setBandeauFin();
 				FinNiveau p = new FinNiveau(c);
 				this.setPanel(p);
 			}

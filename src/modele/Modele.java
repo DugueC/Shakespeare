@@ -25,7 +25,7 @@ public class Modele extends Observable{
 	private String messageBandeau;
 
 	public Modele(){
-		structure = new StructureNiveaux("bdd.csv");
+		structure = new StructureNiveaux("bdd_full.csv");
 		ouvert = true;
 		reset();
 	}
@@ -42,7 +42,7 @@ public class Modele extends Observable{
 	
 	//niveau
 	public void setNiveau(int num) {
-		niveau = structure.getNiveau(num-1);
+		niveau = structure.getNiveau(num);
 		niveau.majSommeCompteurs();
 		setPhrase();
 		setImgBandeau("neutre");
@@ -70,6 +70,7 @@ public class Modele extends Observable{
 				reglesPossibles.add(niveau.getRegle(i));
 			}
 		}
+		
 		if(reglesPossibles.size()>0){
 			this.regle = reglesPossibles.get((int)(Math.random()*reglesPossibles.size()));
 		}
@@ -102,11 +103,9 @@ public class Modele extends Observable{
 			setImgBandeau("perdu");
 			messageBandeau = "Nope...";
 			regle.setCompteur(0);
+			niveau.AjoutErreur(regle.getRegle());
 		}
 		setExplications(regle.getRegle());
-		/*
-		+afficher erreur sur texte cliquable
-		*/
 		setChanged();
 		notifyObservers();
 	}
@@ -162,6 +161,11 @@ public class Modele extends Observable{
 			return false;
 		}
 	}
+	
+	public void setBandeauFin(){
+		setImgBandeau("fin");
+		messageBandeau = "Congratulation";
+	}
 
 	public void reset() {
 		niveau = null;
@@ -173,6 +177,10 @@ public class Modele extends Observable{
 		imgExplications = null;
 		setImgBandeau("neutre");
 		messageBandeau = "Chose your level";
+		for(Niveau n : structure.getNiveaux()){
+			n.initialiseErreurs();
+			n.resetCompteurs();
+		}
 		setChanged();
 		notifyObservers();
 	}

@@ -6,6 +6,7 @@ public class Niveau {
 	private int niveau;
 	private ArrayList<Regle> regles;
 	private int sommeCompteurs;
+	private int[] erreurs;
 	
 	public Niveau(int niveau){
 		this.niveau = niveau;
@@ -44,5 +45,25 @@ public class Niveau {
 		for(Regle r : regles){
 			r.setCompteur(0);
 		}
+	}
+	
+	public void initialiseErreurs(){
+		this.erreurs = new int[regles.size()];
+		for(int i : erreurs){
+			i=0;
+		}
+	}
+	
+	public void AjoutErreur(String regle){
+		for(int i = 0; i<regles.size();i++){
+			if(regles.get(i).getRegle().equals(regle)){
+				erreurs[i]++;
+				System.out.println(regle + " : " + erreurs[i]);
+			}
+		}
+	}
+	
+	public int[] getErreurs(){
+		return erreurs;
 	}
 }

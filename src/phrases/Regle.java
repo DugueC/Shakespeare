@@ -96,6 +96,7 @@ public class Regle {
 	
 	public void setCompteur(int x){
 		this.compteur = x;
+		//System.out.println(regle + " : " + compteur);
 	}
 	public int getCompteur(){
 		return this.compteur;

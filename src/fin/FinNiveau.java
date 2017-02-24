@@ -1,11 +1,8 @@
 package fin;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -13,27 +10,36 @@ import controleur.Controleur;
 
 public class FinNiveau extends JPanel {
 	JButton bouton;
+	Controleur c;
 	
 	public FinNiveau(Controleur c){
 		setLayout(null);
-		
+		this.c = c;
 		bouton = new JButton("Home");
-		bouton.setBounds(300, 300, 80, 60);
+		bouton.setBounds(250, 350, 80, 40);
+		bouton.setBackground(Color.lightGray);
+		bouton.setForeground(Color.black);
 		bouton.addActionListener(c);
 		add(bouton);
 		
-		c.getModele().getVraiNiveau().resetCompteurs();
 		validate();
 	}
 	
 	public void paintComponent(Graphics g){
-		try{
-			Image img = ImageIO.read(new File("img/bleu2.png"));
-			g.drawImage(img, -5, 0, this.getWidth()+10, this.getHeight(), this);
+		g.setColor(new Color(0, 33, 153));
+		g.fillRect(0, 0, this.getWidth(), this.getHeight());
+		
+		g.setColor(Color.white);
+		g.fillRect(70,30, this.getWidth()-140, this.getHeight()-60);
+		
+		g.setColor(Color.black);
+		g.setFont(new Font("Times New Roman", Font.PLAIN, 26));
+		g.drawString("You pass the level "+c.getModele().getNiveau()+ " !", 170, 65);
+		
+		g.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+		int[] err = c.getModele().getVraiNiveau().getErreurs();
+		for(int i=0;i<err.length;i++){
+			g.drawString("You made "+err[i]+ " mistakes for the rule : "+c.getModele().getVraiNiveau().getRegle(i).getRegle(), 100, 120+30*i);
 		}
-		catch (IOException e){
-			e.printStackTrace();
-		}
-
 	}
 }
