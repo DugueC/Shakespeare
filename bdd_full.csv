@@ -52,5 +52,8 @@ Niveaux;Regles;Phrases;Reponse;Correction
 4;regle42;That pizzeria is the best of the town, and that since 10 years !;11;…and that for 10 years !
 4;regle42;I haven't see you since ages, what are you doing now ?;5;...see you for ages…
 4;regle42;He hasn't been to Berlin since his last birthday.;0;No error
-5;regle51;mdr je veux que l'accueil soit joli;0;izi
+5;regle51;John or Mary are coming to the business meeting.;4;John or Mary is coming...
+5;regle51;Either coffee or tea are fine.;5;...is fine.
+5;regle51;Neither Tom nor John was late, which is rare enough to be mentioned.;0;No error
+5;regle51;'Stay' or 'Leave' are not an ultimatum that I want to consider.;4;'Stay' or 'Leave' is not...
 6;regle61;mdr je veux que l'accueil soit joli;0;izi
