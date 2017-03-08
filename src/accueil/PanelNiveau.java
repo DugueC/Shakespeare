@@ -41,7 +41,5 @@ public class PanelNiveau extends JPanel {
 		g.setColor(new Color(230, 230, 255));
 		g.setFont(gras);
 		g.drawString("LEVEL  "+numero,50,30);
-		g.setFont(italic);
-		g.drawString("(explication du theme travaillé)",50,50);
 	}
 }
