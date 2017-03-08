@@ -176,7 +176,7 @@ public class Modele extends Observable{
 		reponse[1]=-1;
 		imgExplications = null;
 		setImgBandeau("neutre");
-		messageBandeau = "Chose your level";
+		messageBandeau = "Choose your level";
 		for(Niveau n : structure.getNiveaux()){
 			n.initialiseErreurs();
 			n.resetCompteurs();
