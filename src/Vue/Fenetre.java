@@ -24,7 +24,7 @@ public class Fenetre extends JFrame implements Observer {
 	private JPanel panneau;
 	
 	public Fenetre(Controleur controleur)  {
-		super("Projet Shakespear");	 
+		super("Shakespeare Project - An English learning tool");	 
 		c = controleur;
 		c.getModele().addObserver(this);
 		
