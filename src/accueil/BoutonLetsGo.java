@@ -13,7 +13,7 @@ public class BoutonLetsGo extends JButton {
 	public BoutonLetsGo(Controleur c,int n){
 		super("Let's go!");
 		numero = n+1;
-		setBounds(455, 20, 90, 35);
+		setBounds(455, 20, 100, 35);
 		addActionListener(c);
 		setBackground(new Color(230, 230, 255));
 		setForeground(Color.black);
